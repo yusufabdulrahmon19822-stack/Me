@@ -1,0 +1,1487 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crafting the Mind (CTM) Community &mdash; Come as you are. Become better than you were.</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ctm: {
+                            dark: '#140A01',
+                            secondary: '#6B3505',
+                            cream: '#F5F1ED',
+                            bright: '#FF8921',
+                            burnt: '#BD5D09',
+                            deep: '#241204',
+                            soft: '#FFA14E',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    },
+                    boxShadow: {
+                        'warm-glow': '0 10px 40px -10px rgba(255, 137, 33, 0.25)',
+                        'deep-glow': '0 20px 50px -15px rgba(20, 10, 1, 0.7)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #140A01;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #6B3505;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #FF8921;
+        }
+
+        .glass-card {
+            background: rgba(36, 18, 4, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 161, 78, 0.15);
+        }
+.gradient-text {
+            background: linear-gradient(135deg, #FFA14E 0%, #FF8921 50%, #BD5D09 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-bg-cta {
+            background: linear-gradient(135deg, #FF8921 0%, #BD5D09 100%);
+        }
+
+        .gradient-bg-cta:hover {
+            background: linear-gradient(135deg, #FFA14E 0%, #FF8921 100%);
+        }
+    </style>
+</head>
+<body class="bg-ctm-dark text-ctm-cream font-sans antialiased selection:bg-ctm-bright selection:text-ctm-dark">
+
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="main-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <a href="#" class="flex items-center gap-3 group focus:outline-none">
+                    <div id="nav-logo-container" class="w-10 h-10 rounded-xl bg-transparent flex items-center justify-center text-ctm-dark font-extrabold text-xl overflow-hidden group-hover:scale-105 transition-transform">
+                        
+                        <img src="./assets/ctm-logo.png" alt="Crafting the Mind CTM logo" class="w-full h-full hidden object-contain" id="nav-logo-img">
+                        <span id="nav-logo-fallback">CTM</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-extrabold text-lg tracking-tight text-ctm-cream group-hover:text-ctm-soft transition-colors">Crafting the Mind</span>
+                        <span class="text-[10px] text-ctm-soft uppercase tracking-widest font-semibold -mt-1">Community</span>
+                    </div>
+                </a>
+
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="#about" class="text-sm font-medium text-ctm-cream/80 hover:text-ctm-bright transition-colors">About</a>
+                    <a href="#activities" class="text-sm font-medium text-ctm-cream/80 hover:text-ctm-bright transition-colors">Life & Activities</a>
+                    <a href="#opportunities" class="text-sm font-medium text-ctm-cream/80 hover:text-ctm-bright transition-colors">Opportunities</a>
+                    <a href="#events" class="text-sm font-medium text-ctm-cream/80 hover:text-ctm-bright transition-colors">Learning</a>
+                    <a href="#shelf" class="text-sm font-medium text-ctm-cream/80 hover:text-ctm-bright transition-colors">Crafter's Shelf</a>
+                    <a href="#founder" class="text-sm font-medium text-ctm-cream/80 hover:text-ctm-bright transition-colors">Founder</a>
+                </nav>
+
+                <div class="hidden md:flex items-center">
+                    <a href="https://chat.whatsapp.com/DvCv6tGCBkMDHV9EHrrBmJ" target="_blank" rel="noopener noreferrer" class="gradient-bg-cta text-ctm-dark font-bold px-5 py-2.5 rounded-full text-sm shadow-warm-glow hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 flex items-center gap-2">
+                        <i data-lucide="message-circle" class="w-4 h-4 fill-current"></i>
+                        <span>Join Community</span>
+                    </a>
+                </div>
+
+                <div class="flex md:hidden">
+                    <button id="mobile-menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" class="text-ctm-cream hover:text-ctm-bright p-2 rounded-lg focus:outline-none" aria-label="Toggle Menu">
+                        <i data-lucide="menu" id="menu-icon-open" class="w-6 h-6"></i>
+                        <i data-lucide="x" id="menu-icon-close" class="w-6 h-6 hidden"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden glass-card border-b border-ctm-soft/20 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-ctm-cream hover:bg-ctm-secondary/30">About CTM</a>
+            <a href="#activities" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-ctm-cream hover:bg-ctm-secondary/30">Community Life</a>
+            <a href="#opportunities" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-ctm-cream hover:bg-ctm-secondary/30">Opportunities</a>
+            <a href="#events" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-ctm-cream hover:bg-ctm-secondary/30">Learning Sessions</a>
+            <a href="#shelf" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-ctm-cream hover:bg-ctm-secondary/30">The Crafter's Shelf</a>
+            <a href="#founder" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-ctm-cream hover:bg-ctm-secondary/30">Founder's Story</a>
+            <div class="pt-2">
+                <a href="https://chat.whatsapp.com/DvCv6tGCBkMDHV9EHrrBmJ" target="_blank" rel="noopener noreferrer" class="gradient-bg-cta text-ctm-dark font-bold w-full py-3 rounded-xl text-center text-sm shadow-warm-glow flex items-center justify-center gap-2">
+                    <i data-lucide="message-circle" class="w-4 h-4 fill-current"></i>
+                    <span>JOIN THE CTM COMMUNITY &mdash; FREE</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        
+        <section class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-32">
+            
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-ctm-bright/10 rounded-full blur-[120px] pointer-events-none"></div>
+            <div class="absolute top-1/3 right-10 w-[300px] h-[300px] bg-ctm-burnt/15 rounded-full blur-[100px] pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center max-w-3xl mx-auto space-y-8">
+
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-ctm-bright/30 text-ctm-soft text-xs sm:text-sm font-semibold tracking-wide">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <span>Hosted on WhatsApp | Open & Welcoming</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-ctm-cream leading-[1.15]">
+                        Come as you are.<br>
+                        <span class="gradient-text">Become better than you were.</span>
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-ctm-cream/80 font-normal leading-relaxed max-w-2xl mx-auto">
+                        Crafting the Mind (CTM) is a vibrant community for people navigating life, mindset, purpose, careers, skills, ideas, relationships, and personal growth. Here, <strong class="text-ctm-soft font-semibold">mindset is at the center of everything we build</strong>.
+                    </p>
+
+                    <div class="pt-2 flex flex-wrap justify-center items-center gap-4 sm:gap-8 text-sm sm:text-base font-medium">
+                        <div class="flex items-center gap-2 glass-card px-4 py-2 rounded-xl border border-ctm-bright/20">
+                            <i data-lucide="users" class="w-5 h-5 text-ctm-bright"></i>
+                            <span class="text-ctm-cream font-bold">200+ Crafters</span>
+                        </div>
+                        <div class="flex items-center gap-2 glass-card px-4 py-2 rounded-xl border border-ctm-bright/20">
+                            <i data-lucide="sparkles" class="w-5 h-5 text-ctm-soft"></i>
+                            <span class="text-ctm-cream/90">Real conversations &bull; Real opportunities &bull; Real growth</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <a href="https://chat.whatsapp.com/DvCv6tGCBkMDHV9EHrrBmJ" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto gradient-bg-cta text-ctm-dark font-extrabold text-base sm:text-lg px-8 py-4 rounded-2xl shadow-warm-glow hover:scale-105 active:scale-95 transition-all duration-200 flex items-center justify-center gap-3 group">
+                            <i data-lucide="message-circle" class="w-6 h-6 fill-current group-hover:rotate-12 transition-transform"></i>
+                            <span>JOIN THE CTM COMMUNITY &mdash; IT&rsquo;S CURRENTLY FREE</span>
+                        </a>
+                    </div>
+
+                    <p class="text-xs text-ctm-cream/50">No hidden fees &bull; Instant WhatsApp invitation link</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="crafters" class="py-16 sm:py-20 relative border-b border-ctm-soft/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-14 space-y-4">
+                    <div class="inline-flex items-center gap-2 text-ctm-bright font-bold uppercase tracking-widest text-xs">
+                        <i data-lucide="users-round" class="w-4 h-4"></i>
+                        <span>The People Behind CTM</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-ctm-cream">Meet the Crafters</h2>
+                    <p class="text-ctm-cream/70 text-base sm:text-lg">
+                        Real people, different stories, and a shared commitment to growth. Select a Crafter's photo to see their reason for joining CTM.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-5">
+                    <!-- Crafter image mapping: PraiseGod | file: praisegod.png | identity: Teacher Trainer -->
+                    <a href="#why-joined-card-1" aria-label="See why PraiseGod joined CTM" class="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ctm-bright glass-card rounded-2xl p-2.5 sm:p-3 border border-ctm-bright/15 overflow-hidden">
+                        <div class="aspect-[4/5] rounded-xl bg-ctm-deep relative overflow-hidden flex items-center justify-center">
+                            <!-- IMAGE MAP: PraiseGod | profile photo file: praisegod.png | Why I Joined CTM gallery -->
+
+                            <img src="./assets/praisegod.png" alt="PraiseGod - Teacher Trainer, CTM Crafter" id="member-img-1" class="hidden w-full h-full object-contain" loading="lazy">
+                            <div id="member-ph-1" class="p-3 text-center space-y-2">
+                                <i data-lucide="user-round" class="w-8 h-8 text-ctm-soft/70 mx-auto"></i>
+                                <span class="block text-xs text-ctm-soft/70 font-semibold">Photo will appear here</span>
+                            </div>
+                        </div>
+                    
+                        <p class="pt-2 text-center text-sm font-semibold text-ctm-cream">PraiseGod</p>
+                        <p class="pt-1 text-center text-[10px] sm:text-[11px] leading-snug font-normal text-ctm-cream/55">Teacher Trainer</p>
+                    </a>
+                    <!-- Crafter image mapping: Phenom | file: phenom.png | identity: Registered Nurse -->
+                    <a href="#why-joined-card-2" aria-label="See why Phenom joined CTM" class="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ctm-bright glass-card rounded-2xl p-2.5 sm:p-3 border border-ctm-bright/15 overflow-hidden">
+                        <div class="aspect-[4/5] rounded-xl bg-ctm-deep relative overflow-hidden flex items-center justify-center">
+                            <!-- IMAGE MAP: Phenom | profile photo file: phenom.png | Why I Joined CTM gallery -->
+
+                            <img src="./assets/phenom.png" alt="Phenom - Registered Nurse, CTM Crafter" id="member-img-2" class="hidden w-full h-full object-contain" loading="lazy">
+                            <div id="member-ph-2" class="p-3 text-center space-y-2">
+                                <i data-lucide="user-round" class="w-8 h-8 text-ctm-soft/70 mx-auto"></i>
+                                <span class="block text-xs text-ctm-soft/70 font-semibold">Photo will appear here</span>
+                            </div>
+                        </div>
+                    
+                        <p class="pt-2 text-center text-sm font-semibold text-ctm-cream">Phenom</p>
+                        <p class="pt-1 text-center text-[10px] sm:text-[11px] leading-snug font-normal text-ctm-cream/55">Registered Nurse</p>
+                    </a>
+                    <!-- Crafter image mapping: Victor | file: victor.png | identity: Photo Editor -->
+                    <a href="#why-joined-card-3" aria-label="See why Victor joined CTM" class="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ctm-bright glass-card rounded-2xl p-2.5 sm:p-3 border border-ctm-bright/15 overflow-hidden">
+                        <div class="aspect-[4/5] rounded-xl bg-ctm-deep relative overflow-hidden flex items-center justify-center">
+                            <!-- IMAGE MAP: Victor | profile photo file: victor.png | Why I Joined CTM gallery -->
+
+                            <img src="./assets/victor.png" alt="Victor - Photo Editor, CTM Crafter" id="member-img-3" class="hidden w-full h-full object-contain" loading="lazy">
+                            <div id="member-ph-3" class="p-3 text-center space-y-2">
+                                <i data-lucide="user-round" class="w-8 h-8 text-ctm-soft/70 mx-auto"></i>
+                                <span class="block text-xs text-ctm-soft/70 font-semibold">Photo will appear here</span>
+                            </div>
+                        </div>
+                    
+                        <p class="pt-2 text-center text-sm font-semibold text-ctm-cream">Victor</p>
+                        <p class="pt-1 text-center text-[10px] sm:text-[11px] leading-snug font-normal text-ctm-cream/55">Photo Editor</p>
+                    </a>
+                    <!-- Crafter image mapping: Mechi | file: mechi.png | identity: Teacher -->
+                    <a href="#why-joined-card-4" aria-label="See why Mechi joined CTM" class="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ctm-bright glass-card rounded-2xl p-2.5 sm:p-3 border border-ctm-bright/15 overflow-hidden">
+                        <div class="aspect-[4/5] rounded-xl bg-ctm-deep relative overflow-hidden flex items-center justify-center">
+                            <!-- IMAGE MAP: Mechi | profile photo file: mechi.png | Why I Joined CTM gallery -->
+
+                            <img src="./assets/mechi.png" alt="Mechi - Teacher, CTM Crafter" id="member-img-4" class="hidden w-full h-full object-contain" loading="lazy">
+                            <div id="member-ph-4" class="p-3 text-center space-y-2">
+                                <i data-lucide="user-round" class="w-8 h-8 text-ctm-soft/70 mx-auto"></i>
+                                <span class="block text-xs text-ctm-soft/70 font-semibold">Photo will appear here</span>
+                            </div>
+                        </div>
+                    
+                        <p class="pt-2 text-center text-sm font-semibold text-ctm-cream">Mechi</p>
+                        <p class="pt-1 text-center text-[10px] sm:text-[11px] leading-snug font-normal text-ctm-cream/55">Teacher</p>
+                    </a>
+                    <!-- Crafter image mapping: Hadiyat | file: hadiyat.png | identity: Graphic Designer & Student -->
+                    <a href="#why-joined-card-5" aria-label="See why Hadiyat joined CTM" class="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ctm-bright glass-card rounded-2xl p-2.5 sm:p-3 border border-ctm-bright/15 overflow-hidden">
+                        <div class="aspect-[4/5] rounded-xl bg-ctm-deep relative overflow-hidden flex items-center justify-center">
+                            <!-- IMAGE MAP: Hadiyat | profile photo file: hadiyat.png | Why I Joined CTM gallery -->
+
+                            <img src="./assets/hadiyat.png" alt="Hadiyat - Graphic Designer and Student, CTM Crafter" id="member-img-5" class="hidden w-full h-full object-contain" loading="lazy">
+                            <div id="member-ph-5" class="p-3 text-center space-y-2">
+                                <i data-lucide="user-round" class="w-8 h-8 text-ctm-soft/70 mx-auto"></i>
+                                <span class="block text-xs text-ctm-soft/70 font-semibold">Photo will appear here</span>
+                            </div>
+                        </div>
+                    
+                        <p class="pt-2 text-center text-sm font-semibold text-ctm-cream">Hadiyat</p>
+                        <p class="pt-1 text-center text-[10px] sm:text-[11px] leading-snug font-normal text-ctm-cream/55">Graphic Designer &amp; Student</p>
+                    </a>
+                    <!-- Crafter image mapping: Temilade | file: temilade.png | identity: Teacher -->
+                    <a href="#why-joined-card-6" aria-label="See why Temilade joined CTM" class="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ctm-bright glass-card rounded-2xl p-2.5 sm:p-3 border border-ctm-bright/15 overflow-hidden">
+                        <div class="aspect-[4/5] rounded-xl bg-ctm-deep relative overflow-hidden flex items-center justify-center">
+                            <!-- IMAGE MAP: Temilade | profile photo file: temilade.png | Why I Joined CTM gallery -->
+
+                            <img src="./assets/temilade.png" alt="Temilade - Teacher, CTM Crafter" id="member-img-6" class="hidden w-full h-full object-contain" loading="lazy">
+                            <div id="member-ph-6" class="p-3 text-center space-y-2">
+                                <i data-lucide="user-round" class="w-8 h-8 text-ctm-soft/70 mx-auto"></i>
+                                <span class="block text-xs text-ctm-soft/70 font-semibold">Photo will appear here</span>
+                            </div>
+                        </div>
+                    
+                        <p class="pt-2 text-center text-sm font-semibold text-ctm-cream">Temilade</p>
+                        <p class="pt-1 text-center text-[10px] sm:text-[11px] leading-snug font-normal text-ctm-cream/55">Teacher</p>
+                    </a>
+                </div>
+                <p class="text-center text-xs text-ctm-cream/45 mt-5">Crafter photo filenames: praisegod.png = PraiseGod (Teacher Trainer); phenom.png = Phenom (Registered Nurse); victor.png = Victor (Photo Editor); mechi.png = Mechi (Teacher); hadiyat.png = Hadiyat (Graphic Designer & Student); temilade.png = Temilade (Teacher).</p>
+            </div>
+        </section>
+
+        <section id="why-i-joined" class="py-20 bg-ctm-deep/50 relative border-y border-ctm-soft/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mx-auto text-center space-y-4 mb-12">
+                    <div class="inline-flex items-center gap-2 text-ctm-bright font-bold uppercase tracking-widest text-xs">
+                        <i data-lucide="heart-handshake" class="w-4 h-4"></i>
+                        <span>Real Stories. Real Reasons.</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-ctm-cream">Why I Joined CTM</h2>
+                    <p class="text-ctm-cream/70 text-base sm:text-lg">
+                        Every Crafter has a story. Read what members say about why they joined Crafting the Mind and what brought them into the community.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <figure id="why-joined-card-1" class="glass-card rounded-2xl p-3 border border-ctm-bright/15 overflow-hidden">
+                        <div class="aspect-[4/5] rounded-xl bg-ctm-dark relative overflow-hidden flex items-center justify-center">
+                            <img src="./assets/why-i-joined-1.jpg" alt="PraiseGod explains why they joined CTM" id="why-joined-img-1" class="hidden w-full h-full object-contain" loading="lazy">
+                            <div id="why-joined-ph-1" class="p-6 text-center space-y-3">
+                                <i data-lucide="image-plus" class="w-8 h-8 text-ctm-soft/70 mx-auto"></i>
+                                <span class="block text-sm text-ctm-soft font-semibold">PraiseGod &mdash; Why I Joined CTM</span>
+                                <span class="block text-xs text-ctm-cream/50">Add PraiseGod's original screenshot as why-i-joined-1.jpg</span>
+                            </div>
+                        </div>
+                    </figure>
+                    <figure id="why-joined-card-2" class="glass-card rounded-2xl p-3 border border-ctm-bright/15 overflow-hidden">
+                        <div class="aspect-[4/5] rounded-xl bg-ctm-dark relative overflow-hidden flex items-center justify-center">
+                            <img src="./assets/why-i-joined-2.jpg" alt="Phenom explains why they joined CTM" id="why-joined-img-2" class="hidden w-full h-full object-contain" loading="lazy">
+                            <div id="why-joined-ph-2" class="p-6 text-center space-y-3">
+                                <i data-lucide="image-plus" class="w-8 h-8 text-ctm-soft/70 mx-auto"></i>
+                                <span class="block text-sm text-ctm-soft font-semibold">Phenom &mdash; Why I Joined CTM</span>
+                                <span class="block text-xs text-ctm-cream/50">Add Phenom's original screenshot as why-i-joined-2.jpg</span>
+                            </div>
+                        </div>
+                    </figure>
+                    <figure id="why-joined-card-3" class="glass-card rounded-2xl p-3 border border-ctm-bright/15 overflow-hidden">
+                        <div class="aspect-[4/5] rounded-xl bg-ctm-dark relative overflow-hidden flex items-center justify-center">
+                            <img src="./assets/why-i-joined-3.jpg" alt="Victor explains why they joined CTM" id="why-joined-img-3" class="hidden w-full h-full object-contain" loading="lazy">
+                            <div id="why-joined-ph-3" class="p-6 text-center space-y-3">
+                                <i data-lucide="image-plus" class="w-8 h-8 text-ctm-soft/70 mx-auto"></i>
+                                <span class="block text-sm text-ctm-soft font-semibold">Victor &mdash; Why I Joined CTM</span>
+                                <span class="block text-xs text-ctm-cream/50">Add Victor's original screenshot as why-i-joined-3.jpg</span>
+                            </div>
+                        </div>
+                    </figure>
+                    <figure id="why-joined-card-4" class="glass-card rounded-2xl p-3 border border-ctm-bright/15 overflow-hidden">
+                        <div class="aspect-[4/5] rounded-xl bg-ctm-dark relative overflow-hidden flex items-center justify-center">
+                            <img src="./assets/why-i-joined-4.jpg" alt="Mechi explains why they joined CTM" id="why-joined-img-4" class="hidden w-full h-full object-contain" loading="lazy">
+                            <div id="why-joined-ph-4" class="p-6 text-center space-y-3">
+                                <i data-lucide="image-plus" class="w-8 h-8 text-ctm-soft/70 mx-auto"></i>
+                                <span class="block text-sm text-ctm-soft font-semibold">Mechi &mdash; Why I Joined CTM</span>
+                                <span class="block text-xs text-ctm-cream/50">Add Mechi's original screenshot as why-i-joined-4.jpg</span>
+                            </div>
+                        </div>
+                    </figure>
+                    <figure id="why-joined-card-5" class="glass-card rounded-2xl p-3 border border-ctm-bright/15 overflow-hidden">
+                        <div class="aspect-[4/5] rounded-xl bg-ctm-dark relative overflow-hidden flex items-center justify-center">
+                            <img src="./assets/why-i-joined-5.jpg" alt="Hadiyat explains why they joined CTM" id="why-joined-img-5" class="hidden w-full h-full object-contain" loading="lazy">
+                            <div id="why-joined-ph-5" class="p-6 text-center space-y-3">
+                                <i data-lucide="image-plus" class="w-8 h-8 text-ctm-soft/70 mx-auto"></i>
+                                <span class="block text-sm text-ctm-soft font-semibold">Hadiyat &mdash; Why I Joined CTM</span>
+                                <span class="block text-xs text-ctm-cream/50">Add Hadiyat's original screenshot as why-i-joined-5.jpg</span>
+                            </div>
+                        </div>
+                    </figure>
+                    <figure id="why-joined-card-6" class="glass-card rounded-2xl p-3 border border-ctm-bright/15 overflow-hidden">
+                        <div class="aspect-[4/5] rounded-xl bg-ctm-dark relative overflow-hidden flex items-center justify-center">
+                            <img src="./assets/why-i-joined-6.jpg" alt="Temilade explains why they joined CTM" id="why-joined-img-6" class="hidden w-full h-full object-contain" loading="lazy">
+                            <div id="why-joined-ph-6" class="p-6 text-center space-y-3">
+                                <i data-lucide="image-plus" class="w-8 h-8 text-ctm-soft/70 mx-auto"></i>
+                                <span class="block text-sm text-ctm-soft font-semibold">Temilade &mdash; Why I Joined CTM</span>
+                                <span class="block text-xs text-ctm-cream/50">Add Temilade's original screenshot as why-i-joined-6.jpg</span>
+                            </div>
+                        </div>
+                    </figure>
+                </div>
+                <p class="text-center text-xs text-ctm-cream/45 mt-5">Upload the original screenshots beside this HTML file using the filenames shown, or replace each image path with the exact location in your project. Screenshots are displayed with object-contain so their contents are not cropped.</p>
+            </div>
+        </section>
+
+        <section id="about" class="py-20 bg-ctm-deep/60 relative border-y border-ctm-soft/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="inline-flex items-center gap-2 text-ctm-bright font-bold uppercase tracking-widest text-xs">
+                            <i data-lucide="compass" class="w-4 h-4"></i>
+                            <span>Our Core Philosophy</span>
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-ctm-cream">
+                            This is more than a WhatsApp group.
+                        </h2>
+                        <p class="text-lg text-ctm-cream/80 leading-relaxed">
+                            Crafting the Mind (CTM) is a dedicated space designed for honest conversations, continuous learning, genuine human connection, personal development, and discovering life-changing opportunities.
+                        </p>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                            <div class="p-4 rounded-xl glass-card border-l-4 border-l-ctm-bright flex items-start gap-3">
+                                <i data-lucide="brain" class="w-6 h-6 text-ctm-bright flex-shrink-0 mt-0.5"></i>
+                                <div>
+                                    <h3 class="font-bold text-ctm-cream">Mindset First</h3>
+                                    <p class="text-xs text-ctm-cream/70 mt-1">Transforming how we think before transforming how we act.</p>
+                                </div>
+                            </div>
+                            <div class="p-4 rounded-xl glass-card border-l-4 border-l-ctm-soft flex items-start gap-3">
+                                <i data-lucide="user-check" class="w-6 h-6 text-ctm-soft flex-shrink-0 mt-0.5"></i>
+                                <div>
+                                    <h3 class="font-bold text-ctm-cream">The Real You</h3>
+                                    <p class="text-xs text-ctm-cream/70 mt-1">Come as you are &mdash; without pretenses, judgment, or masks.</p>
+                                </div>
+                            </div>
+                            <div class="p-4 rounded-xl glass-card border-l-4 border-l-ctm-burnt flex items-start gap-3">
+                                <i data-lucide="message-square" class="w-6 h-6 text-ctm-burnt flex-shrink-0 mt-0.5"></i>
+                                <div>
+                                    <h3 class="font-bold text-ctm-cream">Real Talk</h3>
+                                    <p class="text-xs text-ctm-cream/70 mt-1">Authentic dialogue regarding life, career, purpose, and struggles.</p>
+                                </div>
+                            </div>
+                            <div class="p-4 rounded-xl glass-card border-l-4 border-l-ctm-bright flex items-start gap-3">
+                                <i data-lucide="trending-up" class="w-6 h-6 text-ctm-bright flex-shrink-0 mt-0.5"></i>
+                                <div>
+                                    <h3 class="font-bold text-ctm-cream">Real Change</h3>
+                                    <p class="text-xs text-ctm-cream/70 mt-1">Becoming better together without losing who you truly are.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5">
+                        <div class="relative rounded-3xl overflow-hidden glass-card p-3 border border-ctm-bright/20 shadow-2xl">
+                            
+                            <div class="aspect-[4/3] rounded-2xl bg-ctm-deep relative overflow-hidden flex flex-col items-center justify-center p-6 text-center border border-ctm-soft/10 group">
+                                <img src="./assets/ctm-overview.png" alt="CTM Community overview image" class="absolute inset-0 w-full h-full hidden object-contain" id="about-image">
+                                <div id="about-placeholder" class="space-y-3 flex flex-col items-center">
+                                    <div class="w-16 h-16 rounded-2xl bg-ctm-secondary/50 flex items-center justify-center text-ctm-bright">
+                                        <i data-lucide="image" class="w-8 h-8"></i>
+                                    </div>
+                                    <p class="text-sm font-semibold text-ctm-soft">Original Asset Placeholder: CTM Overview / Screenshot</p>
+                                    <p class="text-xs text-ctm-cream/60 max-w-xs">Upload your original CTM overview photo or conversation screenshot here.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="activities" class="py-20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <div class="inline-flex items-center gap-2 text-ctm-bright font-bold uppercase tracking-widest text-xs">
+                        <i data-lucide="calendar" class="w-4 h-4"></i>
+                        <span>What Happens Inside</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-ctm-cream">
+                        Community Life & Activities
+                    </h2>
+                    <p class="text-ctm-cream/70 text-base">
+                        Every day brings new value, deep connections, and purposeful interaction.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                    <div class="glass-card p-6 rounded-2xl hover:border-ctm-bright/40 transition-all group flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-ctm-bright/10 text-ctm-bright flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                                <i data-lucide="messages-square" class="w-6 h-6"></i>
+                            </div>
+                            <span class="text-xs font-bold text-ctm-soft uppercase tracking-wider">Everyday &bull; Open Always</span>
+                            <h3 class="text-xl font-bold text-ctm-cream mt-1 mb-3">Daily Conversation</h3>
+                            <p class="text-sm text-ctm-cream/70 leading-relaxed">
+                                Open throughout the day. Members discuss everyday life, work, business ideas, personal wins, challenges, pictures, and videos in a safe, warm space.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-ctm-cream/5 flex items-center gap-2 text-xs text-ctm-soft font-medium">
+                            <i data-lucide="clock" class="w-3.5 h-3.5"></i>
+                            <span>Continuous interaction</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl hover:border-ctm-bright/40 transition-all group flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-ctm-soft/10 text-ctm-soft flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                                <i data-lucide="book-open-text" class="w-6 h-6"></i>
+                            </div>
+                            <span class="text-xs font-bold text-ctm-soft uppercase tracking-wider">Tuesdays @ 8:00 PM</span>
+                            <h3 class="text-xl font-bold text-ctm-cream mt-1 mb-3">Story Tuesday</h3>
+                            <p class="text-sm text-ctm-cream/70 leading-relaxed">
+                                Real-life stories, burning questions, shared human experiences, and diverse perspectives that foster empathy and deep personal reflection.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-ctm-cream/5 flex items-center gap-2 text-xs text-ctm-bright font-medium">
+                            <i data-lucide="calendar-heart" class="w-3.5 h-3.5"></i>
+                            <span>Weekly Session</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl hover:border-ctm-bright/40 transition-all group flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-ctm-burnt/20 text-ctm-bright flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                                <i data-lucide="lightbulb" class="w-6 h-6"></i>
+                            </div>
+                            <span class="text-xs font-bold text-ctm-soft uppercase tracking-wider">Wednesdays @ 8:00 PM</span>
+                            <h3 class="text-xl font-bold text-ctm-cream mt-1 mb-3">CTM Conversation Session</h3>
+                            <p class="text-sm text-ctm-cream/70 leading-relaxed">
+                                Deep mindset conversations focusing on the "Becoming Journey" &mdash; exploring purpose, intentional living, clarity, and emotional maturity.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-ctm-cream/5 flex items-center gap-2 text-xs text-ctm-soft font-medium">
+                            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                            <span>Mindset Focus</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl hover:border-ctm-bright/40 transition-all group flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                                <i data-lucide="party-popper" class="w-6 h-6"></i>
+                            </div>
+                            <span class="text-xs font-bold text-purple-400 uppercase tracking-wider">Fridays @ 8:00 PM</span>
+                            <h3 class="text-xl font-bold text-ctm-cream mt-1 mb-3">CTM Party Night</h3>
+                            <p class="text-sm text-ctm-cream/70 leading-relaxed">
+                                Relaxed community connection. Interactive games, trivia, shared laughter, and fun social conversations to wind down the week.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-ctm-cream/5 flex items-center gap-2 text-xs text-purple-400 font-medium">
+                            <i data-lucide="smile" class="w-3.5 h-3.5"></i>
+                            <span>Fun & Chill</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl hover:border-ctm-bright/40 transition-all group flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                                <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+                            </div>
+                            <span class="text-xs font-bold text-blue-400 uppercase tracking-wider">Periodic Schedule</span>
+                            <h3 class="text-xl font-bold text-ctm-cream mt-1 mb-3">Learning Sessions</h3>
+                            <p class="text-sm text-ctm-cream/70 leading-relaxed">
+                                Practical classes, guest speaker sessions, expert webinars, career advancement discussions, skill acquisition workshops, and interactive Q&As.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-ctm-cream/5 flex items-center gap-2 text-xs text-blue-400 font-medium">
+                            <i data-lucide="award" class="w-3.5 h-3.5"></i>
+                            <span>Skills & Mentorship</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl hover:border-ctm-bright/40 transition-all group flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                                <i data-lucide="network" class="w-6 h-6"></i>
+                            </div>
+                            <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider">Ongoing Synergy</span>
+                            <h3 class="text-xl font-bold text-ctm-cream mt-1 mb-3">Community Synergy</h3>
+                            <p class="text-sm text-ctm-cream/70 leading-relaxed">
+                                Members actively connect, collaborate, peer-support one another, review each other's work, and share exclusive personal and professional leads.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-ctm-cream/5 flex items-center gap-2 text-xs text-emerald-400 font-medium">
+                            <i data-lucide="heart" class="w-3.5 h-3.5"></i>
+                            <span>Peer Support</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="opportunities" class="py-20 bg-ctm-deep/80 relative border-y border-ctm-soft/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="max-w-3xl mx-auto text-center space-y-4 mb-16">
+                    <div class="inline-flex items-center gap-2 text-ctm-bright font-bold uppercase tracking-widest text-xs">
+                        <i data-lucide="briefcase" class="w-4 h-4"></i>
+                        <span>Growth & Access</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-ctm-cream">
+                        &ldquo;Your next opportunity could start with a conversation.&rdquo;
+                    </h2>
+                    <p class="text-ctm-cream/80 text-base sm:text-lg">
+                        CTM serves as a springboard for real-world growth. We regularly share verified and actionable opportunities within the group.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
+                    <div class="glass-card p-4 rounded-xl flex items-center gap-3 border border-ctm-bright/10">
+                        <div class="w-8 h-8 rounded-lg bg-ctm-bright/20 flex items-center justify-center text-ctm-bright">
+                            <i data-lucide="circle-check-big" class="w-4 h-4"></i>
+                        </div>
+                        <span class="text-sm font-semibold text-ctm-cream">Job Openings</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl flex items-center gap-3 border border-ctm-bright/10">
+                        <div class="w-8 h-8 rounded-lg bg-ctm-bright/20 flex items-center justify-center text-ctm-bright">
+                            <i data-lucide="circle-check-big" class="w-4 h-4"></i>
+                        </div>
+                        <span class="text-sm font-semibold text-ctm-cream">Internships</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl flex items-center gap-3 border border-ctm-bright/10">
+                        <div class="w-8 h-8 rounded-lg bg-ctm-bright/20 flex items-center justify-center text-ctm-bright">
+                            <i data-lucide="circle-check-big" class="w-4 h-4"></i>
+                        </div>
+                        <span class="text-sm font-semibold text-ctm-cream">Scholarships</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl flex items-center gap-3 border border-ctm-bright/10">
+                        <div class="w-8 h-8 rounded-lg bg-ctm-bright/20 flex items-center justify-center text-ctm-bright">
+                            <i data-lucide="circle-check-big" class="w-4 h-4"></i>
+                        </div>
+                        <span class="text-sm font-semibold text-ctm-cream">Free Courses</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl flex items-center gap-3 border border-ctm-bright/10">
+                        <div class="w-8 h-8 rounded-lg bg-ctm-bright/20 flex items-center justify-center text-ctm-bright">
+                            <i data-lucide="circle-check-big" class="w-4 h-4"></i>
+                        </div>
+                        <span class="text-sm font-semibold text-ctm-cream">Freelance Gigs</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl flex items-center gap-3 border border-ctm-bright/10">
+                        <div class="w-8 h-8 rounded-lg bg-ctm-bright/20 flex items-center justify-center text-ctm-bright">
+                            <i data-lucide="circle-check-big" class="w-4 h-4"></i>
+                        </div>
+                        <span class="text-sm font-semibold text-ctm-cream">Collaborations</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl flex items-center gap-3 border border-ctm-bright/10">
+                        <div class="w-8 h-8 rounded-lg bg-ctm-bright/20 flex items-center justify-center text-ctm-bright">
+                            <i data-lucide="circle-check-big" class="w-4 h-4"></i>
+                        </div>
+                        <span class="text-sm font-semibold text-ctm-cream">Relevant Programs</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl flex items-center gap-3 border border-ctm-bright/10">
+                        <div class="w-8 h-8 rounded-lg bg-ctm-bright/20 flex items-center justify-center text-ctm-bright">
+                            <i data-lucide="circle-check-big" class="w-4 h-4"></i>
+                        </div>
+                        <span class="text-sm font-semibold text-ctm-cream">Business Ventures</span>
+                    </div>
+                </div>
+
+                <div class="glass-card p-8 rounded-3xl border border-ctm-bright/30 relative overflow-hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                        <div class="md:col-span-8 space-y-4">
+                            <div class="inline-block bg-ctm-bright/20 text-ctm-bright px-3 py-1 rounded-full text-xs font-bold uppercase">
+                                Member Spotlight & Promotion
+                            </div>
+                            <h3 class="text-2xl font-bold text-ctm-cream">
+                                Share Your Work With The Community
+                            </h3>
+                            <p class="text-ctm-cream/80 text-sm leading-relaxed">
+                                Have a project, product, service, class, webinar, or portfolio you're building? CTM members can pitch, discover, and promote legitimate projects through the community's applicable member-promotion guidelines.
+                            </p>
+                        </div>
+                        <div class="md:col-span-4 flex justify-center md:justify-end">
+                            <a href="https://chat.whatsapp.com/DvCv6tGCBkMDHV9EHrrBmJ" target="_blank" rel="noopener noreferrer" class="gradient-bg-cta text-ctm-dark font-bold px-6 py-3.5 rounded-xl text-sm shadow-warm-glow hover:scale-105 transition-all text-center">
+                                Connect & Pitch
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="text-center text-xs text-ctm-cream/40 mt-8">
+                    * CTM provides a platform for sharing and networking. Joining does not guarantee specific employment, income, or financial success.
+                </p>
+            </div>
+        </section>
+
+        <section class="py-20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <div class="inline-flex items-center gap-2 text-ctm-bright font-bold uppercase tracking-widest text-xs">
+                        <i data-lucide="camera" class="w-4 h-4"></i>
+                        <span>Snapshots of CTM</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-ctm-cream">
+                        Community Gallery
+                    </h2>
+                    <p class="text-ctm-cream/70 text-base">
+                        Real moments, session highlights, and vibrant conversations inside CTM.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                    <div class="glass-card rounded-2xl overflow-hidden border border-ctm-soft/15 group">
+                        <div class="aspect-[4/3] bg-ctm-deep relative overflow-hidden flex items-center justify-center">
+                            <img src="./assets/daily-conversation.png" alt="Daily Conversation screenshot" class="w-full h-full group-hover:scale-105 transition-transform duration-300 hidden object-contain" id="gallery-img-1">
+                            <div id="gallery-ph-1" class="p-6 text-center space-y-2">
+                                <i data-lucide="message-square-text" class="w-8 h-8 text-ctm-soft mx-auto opacity-60"></i>
+                                <span class="text-xs font-semibold text-ctm-soft block">Daily Conversation Screenshot</span>
+                                <span class="text-[11px] text-ctm-cream/50 block">Placeholder for WhatsApp chat screenshot</span>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-ctm-dark/40">
+                            <p class="text-xs text-ctm-cream/80 font-medium">Everyday conversations and active engagement inside CTM.</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl overflow-hidden border border-ctm-soft/15 group">
+                        <div class="aspect-[4/3] bg-ctm-deep relative overflow-hidden flex items-center justify-center">
+                            <img src="./assets/friday-party-night.png" alt="Friday Party Night screenshot" class="w-full h-full group-hover:scale-105 transition-transform duration-300 hidden object-contain" id="gallery-img-2">
+                            <div id="gallery-ph-2" class="p-6 text-center space-y-2">
+                                <i data-lucide="party-popper" class="w-8 h-8 text-purple-400 mx-auto opacity-60"></i>
+                                <span class="text-xs font-semibold text-purple-400 block">Friday Party Night</span>
+                                <span class="text-[11px] text-ctm-cream/50 block">Placeholder for Party Night games & banter</span>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-ctm-dark/40">
+                            <p class="text-xs text-ctm-cream/80 font-medium">Friday games, laughter, and community bonding.</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl overflow-hidden border border-ctm-soft/15 group">
+                        <div class="aspect-[4/3] bg-ctm-deep relative overflow-hidden flex items-center justify-center">
+                            <img src="./assets/story-tuesday.png" alt="Story Tuesday screenshot" class="w-full h-full group-hover:scale-105 transition-transform duration-300 hidden object-contain" id="gallery-img-3">
+                            <div id="gallery-ph-3" class="p-6 text-center space-y-2">
+                                <i data-lucide="book-open" class="w-8 h-8 text-ctm-bright mx-auto opacity-60"></i>
+                                <span class="text-xs font-semibold text-ctm-bright block">Story Tuesday Session</span>
+                                <span class="text-[11px] text-ctm-cream/50 block">Placeholder for real-life stories screenshot</span>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-ctm-dark/40">
+                            <p class="text-xs text-ctm-cream/80 font-medium">Deep stories, personal reflection, and shared wisdom.</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl overflow-hidden border border-ctm-soft/15 group">
+                        <div class="aspect-[4/3] bg-ctm-deep relative overflow-hidden flex items-center justify-center">
+                            <img src="./assets/google-meet-session.png" alt="Google Meet learning session screenshot" class="w-full h-full group-hover:scale-105 transition-transform duration-300 hidden object-contain" id="gallery-img-4">
+                            <div id="gallery-ph-4" class="p-6 text-center space-y-2">
+                                <i data-lucide="video" class="w-8 h-8 text-blue-400 mx-auto opacity-60"></i>
+                                <span class="text-xs font-semibold text-blue-400 block">Google Meet Live Class</span>
+                                <span class="text-[11px] text-ctm-cream/50 block">Placeholder for live virtual meeting image</span>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-ctm-dark/40">
+                            <p class="text-xs text-ctm-cream/80 font-medium">Live video sessions, masterclasses, and Q&A interactions.</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl overflow-hidden border border-ctm-soft/15 group">
+                        <div class="aspect-[4/3] bg-ctm-deep relative overflow-hidden flex items-center justify-center">
+                            <img src="./assets/jobs-opportunities.png" alt="Jobs and opportunities screenshot" class="w-full h-full group-hover:scale-105 transition-transform duration-300 hidden object-contain" id="gallery-img-5">
+                            <div id="gallery-ph-5" class="p-6 text-center space-y-2">
+                                <i data-lucide="briefcase" class="w-8 h-8 text-emerald-400 mx-auto opacity-60"></i>
+                                <span class="text-xs font-semibold text-emerald-400 block">Opportunities & Job Leads</span>
+                                <span class="text-[11px] text-ctm-cream/50 block">Placeholder for job postings screenshot</span>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-ctm-dark/40">
+                            <p class="text-xs text-ctm-cream/80 font-medium">Members sharing high-value jobs, gigs, and opportunities.</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl overflow-hidden border border-ctm-soft/15 group">
+                        <div class="aspect-[4/3] bg-ctm-deep relative overflow-hidden flex items-center justify-center">
+                            <img src="./assets/linkedin-activity.png" alt="LinkedIn community activity screenshot" class="w-full h-full group-hover:scale-105 transition-transform duration-300 hidden object-contain" id="gallery-img-6">
+                            <div id="gallery-ph-6" class="p-6 text-center space-y-2">
+                                <span aria-hidden="true" class="w-8 h-8 text-sky-400 mx-auto opacity-70 rounded-sm border border-current flex items-center justify-center font-extrabold text-lg leading-none">in</span>
+                                <span class="text-xs font-semibold text-sky-400 block">LinkedIn Community Synergy</span>
+                                <span class="text-[11px] text-ctm-cream/50 block">Placeholder for LinkedIn network activity</span>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-ctm-dark/40">
+                            <p class="text-xs text-ctm-cream/80 font-medium">Supporting members' professional growth and posts on LinkedIn.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="events" class="py-20 bg-ctm-deep/60 relative border-y border-ctm-soft/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <div class="inline-flex items-center gap-2 text-ctm-bright font-bold uppercase tracking-widest text-xs">
+                        <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+                        <span>Knowledge Sharing</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-ctm-cream">
+                        Learning Sessions & Workshops
+                    </h2>
+                    <p class="text-ctm-cream/70 text-base">
+                        Practical classes, expert guest sessions, webinars, and skill mentorship designed to elevate your personal and professional journey.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                    <div class="glass-card p-6 rounded-3xl border border-ctm-bright/20 flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 rounded-full bg-ctm-secondary/40 text-ctm-soft text-xs font-semibold border border-ctm-soft/20">
+                                    Past Workshop Highlight
+                                </span>
+                                <span class="text-xs text-ctm-cream/50 flex items-center gap-1">
+                                    <i data-lucide="circle-check-big" class="w-3.5 h-3.5 text-emerald-400"></i> Completed
+                                </span>
+                            </div>
+
+                            <h3 class="text-2xl font-bold text-ctm-cream">
+                                Navigating Your Career Path With Clarity
+                            </h3>
+                            
+                            <p class="text-sm text-ctm-cream/70 leading-relaxed">
+                                An insightful, action-oriented masterclass focused on untangling career confusion, setting strategic goals, and aligning individual strengths with real-world market opportunities.
+                            </p>
+
+                            <div class="aspect-[16/9] rounded-xl bg-ctm-dark/60 overflow-hidden border border-ctm-soft/10 flex items-center justify-center p-4">
+                                <img src="./assets/career-path-clarity.png" alt="Navigating Your Career Path With Clarity event flyer" class="w-full h-full hidden object-contain" id="event-flyer-1">
+                                <div id="event-ph-1" class="text-center space-y-1">
+                                    <i data-lucide="image" class="w-6 h-6 text-ctm-soft mx-auto opacity-70"></i>
+                                    <span class="text-xs text-ctm-soft block">Career Session Flyer Placeholder</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-ctm-cream/10 flex items-center justify-between text-xs text-ctm-cream/60">
+                            <span>Topic: Career Clarity & Strategy</span>
+                            <span>Hosted inside CTM</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-3xl border border-ctm-bright/20 flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 rounded-full bg-ctm-burnt/30 text-ctm-bright text-xs font-semibold border border-ctm-bright/20">
+                                    Past Masterclass
+                                </span>
+                                <span class="text-xs text-ctm-cream/50 flex items-center gap-1">
+                                    <i data-lucide="clock" class="w-3.5 h-3.5 text-ctm-bright"></i> Held Oct 10, 2026
+                                </span>
+                            </div>
+
+                            <h3 class="text-2xl font-bold text-ctm-cream">
+                                Turn Your Skill Into Magnetic Income!
+                            </h3>
+                            
+                            <p class="text-sm text-ctm-cream/70 leading-relaxed">
+                                A high-value session detailing practical strategies for monetizing expertise, packaging skills, positioning personal brand value, and attracting premium opportunities.
+                            </p>
+
+                            <div class="aspect-[16/9] rounded-xl bg-ctm-dark/60 overflow-hidden border border-ctm-soft/10 flex items-center justify-center p-4">
+                                <img src="./assets/skill-to-magnetic-income.png" alt="Turn Your Skill Into Magnetic Income event flyer" class="w-full h-full hidden object-contain" id="event-flyer-2">
+                                <div id="event-ph-2" class="text-center space-y-1">
+                                    <i data-lucide="image" class="w-6 h-6 text-ctm-soft mx-auto opacity-70"></i>
+                                    <span class="text-xs text-ctm-soft block">Skill-to-Income Flyer Placeholder</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-ctm-cream/10 flex items-center justify-between text-xs text-ctm-cream/60">
+                            <span>Access Fee: &#8358;2,000 (Past Event)</span>
+                            <span>Recorded Live Session</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="shelf" class="py-20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <div class="inline-flex items-center gap-2 text-ctm-bright font-bold uppercase tracking-widest text-xs">
+                        <i data-lucide="folder-kanban" class="w-4 h-4"></i>
+                        <span>Curated Tools & Guides</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-ctm-cream">
+                        The Crafter&rsquo;s Shelf
+                    </h2>
+                    <p class="text-ctm-cream/70 text-base">
+                        Exclusive practical playbooks, reflection templates, identity journals, and audit kits designed to accelerate your clarity and growth.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                    <div class="glass-card p-6 rounded-2xl border border-ctm-bright/20 flex flex-col justify-between hover:border-ctm-bright/50 transition-colors">
+                        <div class="space-y-3">
+                            <div class="w-10 h-10 rounded-lg bg-ctm-bright/15 text-ctm-bright flex items-center justify-center">
+                                <span aria-hidden="true" class="w-5 h-5 rounded-sm border border-current flex items-center justify-center font-extrabold text-xs leading-none">in</span>
+                            </div>
+                            <h3 class="font-bold text-lg text-ctm-cream">LinkedIn Content-to-Opportunity Playbook</h3>
+                            <p class="text-xs text-ctm-cream/70">A step-by-step strategy guide on converting organic LinkedIn posts into career opportunities.</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-ctm-cream/10 flex items-center justify-between">
+                            <span class="text-[11px] text-ctm-cream/40">Resource link to be added</span>
+                            <button disabled class="px-3 py-1.5 rounded-lg bg-ctm-secondary/30 text-ctm-cream/40 text-xs font-semibold cursor-not-allowed">
+                                Pending
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl border border-ctm-bright/20 flex flex-col justify-between hover:border-ctm-bright/50 transition-colors">
+                        <div class="space-y-3">
+                            <div class="w-10 h-10 rounded-lg bg-ctm-bright/15 text-ctm-bright flex items-center justify-center">
+                                <i data-lucide="square-check" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="font-bold text-lg text-ctm-cream">LinkedIn Profile Audit Kit</h3>
+                            <p class="text-xs text-ctm-cream/70">Checklist and optimization template to make your LinkedIn profile stand out to recruiters.</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-ctm-cream/10 flex items-center justify-between">
+                            <span class="text-[11px] text-ctm-cream/40">Resource link to be added</span>
+                            <button disabled class="px-3 py-1.5 rounded-lg bg-ctm-secondary/30 text-ctm-cream/40 text-xs font-semibold cursor-not-allowed">
+                                Pending
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl border border-ctm-bright/20 flex flex-col justify-between hover:border-ctm-bright/50 transition-colors">
+                        <div class="space-y-3">
+                            <div class="w-10 h-10 rounded-lg bg-ctm-bright/15 text-ctm-bright flex items-center justify-center">
+                                <i data-lucide="book-open-check" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="font-bold text-lg text-ctm-cream">CTM Identity Reset Journal</h3>
+                            <p class="text-xs text-ctm-cream/70">Guided journal prompts to re-examine core beliefs, clear mental noise, and reset direction.</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-ctm-cream/10 flex items-center justify-between">
+                            <span class="text-[11px] text-ctm-cream/40">Resource link to be added</span>
+                            <button disabled class="px-3 py-1.5 rounded-lg bg-ctm-secondary/30 text-ctm-cream/40 text-xs font-semibold cursor-not-allowed">
+                                Pending
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl border border-ctm-bright/20 flex flex-col justify-between hover:border-ctm-bright/50 transition-colors">
+                        <div class="space-y-3">
+                            <div class="w-10 h-10 rounded-lg bg-ctm-bright/15 text-ctm-bright flex items-center justify-center">
+                                <i data-lucide="map" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="font-bold text-lg text-ctm-cream">CTM Identity Mapping Exercise 002</h3>
+                            <p class="text-xs text-ctm-cream/70">Practical clarity exercise for mapping out personal values, goals, and non-negotiables.</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-ctm-cream/10 flex items-center justify-between">
+                            <span class="text-[11px] text-ctm-cream/40">Resource link to be added</span>
+                            <button disabled class="px-3 py-1.5 rounded-lg bg-ctm-secondary/30 text-ctm-cream/40 text-xs font-semibold cursor-not-allowed">
+                                Pending
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl border border-ctm-bright/20 flex flex-col justify-between hover:border-ctm-bright/50 transition-colors">
+                        <div class="space-y-3">
+                            <div class="w-10 h-10 rounded-lg bg-ctm-bright/15 text-ctm-bright flex items-center justify-center">
+                                <i data-lucide="file-text" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="font-bold text-lg text-ctm-cream">CTM Identity Reflection Sheet</h3>
+                            <p class="text-xs text-ctm-cream/70">Quick self-assessment reflection sheet to track personal development milestones.</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-ctm-cream/10 flex items-center justify-between">
+                            <span class="text-[11px] text-ctm-cream/40">Resource link to be added</span>
+                            <button disabled class="px-3 py-1.5 rounded-lg bg-ctm-secondary/30 text-ctm-cream/40 text-xs font-semibold cursor-not-allowed">
+                                Pending
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl border-2 border-ctm-bright flex flex-col justify-between bg-gradient-to-br from-ctm-deep to-ctm-secondary/30 shadow-warm-glow">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between gap-3">
+                                <h3 class="font-bold text-xl text-ctm-cream">&ldquo;I See You&rdquo; Resource</h3>
+                                <span class="shrink-0 px-2.5 py-1 rounded-full bg-ctm-bright/20 text-ctm-bright text-[10px] font-bold uppercase">
+                                    Featured Resource
+                                </span>
+                            </div>
+
+                            <!-- I SEE YOU BOX FRONT IMAGE: save the front-of-box image as i-see-you-box-front.png beside this HTML file, or update the src path below. -->
+                            <div class="aspect-[4/3] rounded-xl bg-ctm-dark/60 overflow-hidden border border-ctm-soft/15 flex items-center justify-center p-3">
+                                <img src="./assets/i-see-you-box-front.png" alt="Front image of the I See You resource box" id="isee-you-box-image" class="hidden w-full h-full object-contain" loading="lazy">
+                                <div id="isee-you-box-placeholder" class="text-center space-y-2 p-4">
+                                    <i data-lucide="image-plus" class="w-8 h-8 text-ctm-soft/70 mx-auto"></i>
+                                    <span class="block text-sm text-ctm-soft font-semibold">I See You Box Image</span>
+                                    <span class="block text-xs text-ctm-cream/50">Add the front image as i-see-you-box-front.png</span>
+                                </div>
+                            </div>
+
+                            <p class="text-xs text-ctm-cream/80 leading-relaxed">
+                                A special foundational growth asset and reflection resource crafted specifically for every active Crafter.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-ctm-bright/20 flex items-center justify-between">
+                            <span class="text-xs text-ctm-soft font-medium flex items-center gap-1">
+                                <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Live Resource
+                            </span>
+                            <a href="https://bit.ly/ISeeyouCRAFTER" target="_blank" rel="noopener noreferrer" class="gradient-bg-cta text-ctm-dark font-bold px-4 py-2 rounded-xl text-xs hover:scale-105 transition-transform flex items-center gap-1">
+                                <span>Access Resource</span>
+                                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="founder" class="py-20 bg-ctm-deep/80 relative border-y border-ctm-soft/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+                    <div class="lg:col-span-5 order-2 lg:order-1">
+                        <div class="relative max-w-md mx-auto">
+                            
+                            <div class="absolute -inset-2 rounded-3xl bg-gradient-to-r from-ctm-bright to-ctm-burnt opacity-30 blur-xl"></div>
+                            
+                            <div class="relative rounded-3xl glass-card p-3 border border-ctm-bright/30">
+                                <div class="aspect-[3/4] rounded-2xl bg-ctm-dark overflow-hidden relative flex flex-col items-center justify-center text-center p-6 border border-ctm-soft/10">
+                                    <img src="./assets/chichi-stanley.png" alt="Chichi Stanley, founder of CTM" class="w-full h-full absolute inset-0 hidden object-contain" id="founder-img">
+                                    
+                                    <div id="founder-ph" class="space-y-3 flex flex-col items-center">
+                                        <div class="w-20 h-20 rounded-full bg-ctm-secondary flex items-center justify-center text-ctm-bright text-2xl font-bold">
+                                            CS
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-ctm-cream text-lg">Chichi Stanley</h4>
+                                            <p class="text-xs text-ctm-soft">Founder, Crafting the Mind</p>
+                                        </div>
+                                        <p class="text-xs text-ctm-cream/50 max-w-xs">
+                                            Placeholder for original photo of Chichi Stanley
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7 order-1 lg:order-2 space-y-6">
+                        <div class="inline-flex items-center gap-2 text-ctm-bright font-bold uppercase tracking-widest text-xs">
+                            <i data-lucide="heart" class="w-4 h-4"></i>
+                            <span>Meet the Founder</span>
+                        </div>
+                        
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-ctm-cream">
+                            Behind Crafting the Mind
+                        </h2>
+
+                        <div class="relative space-y-4 text-ctm-cream/90 text-base sm:text-lg leading-relaxed font-normal glass-card p-6 rounded-2xl border-l-4 border-l-ctm-bright">
+                            <i data-lucide="quote" class="w-8 h-8 text-ctm-bright/30 absolute top-4 right-4"></i>
+                            <p>
+                                &ldquo;I created Crafting the Mind because I believe becoming better shouldn't require people to lose themselves in the process. I wanted to create a space for people who are figuring things out, people navigating purpose, clarity, work, relationships, growth and the everyday work of being human.&rdquo;
+                            </p>
+                            <p>
+                                &ldquo;CTM started with conversations about how we think, work, grow and navigate life, with mindset at the centre. Today, it has grown into a community where people can learn, build, discover opportunities and become better together.&rdquo;
+                            </p>
+                        </div>
+
+                        <div class="pt-2 flex items-center gap-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-ctm-cream">Chichi Stanley</h3>
+                                <p class="text-sm text-ctm-soft font-medium">Founder & Host, CTM Community</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="testimony-crafters" class="py-20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mx-auto text-center space-y-4 mb-12">
+                    <div class="inline-flex items-center gap-2 text-ctm-bright font-bold uppercase tracking-widest text-xs">
+                        <i data-lucide="message-circle-heart" class="w-4 h-4"></i>
+                        <span>Crafter Voices</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-ctm-cream">Crafters &amp; Their Testimonies</h2>
+                    <p class="text-ctm-cream/70 text-base sm:text-lg">Meet six different Crafters. Select a photo to read that member's matching testimony screenshot.</p>
+                </div>
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-5">
+                    <!-- Crafter image mapping: Emmanuel | file: emmanuel.png | identity: AI / UGC Video Creator -->
+                    <a href="#testimony-card-1" aria-label="Read Emmanuel's testimony" class="glass-card rounded-2xl p-3 border border-ctm-bright/15 overflow-hidden block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ctm-bright transition-transform hover:-translate-y-1">
+                        <div class="aspect-[4/5] rounded-xl bg-ctm-dark relative overflow-hidden flex items-center justify-center">
+                            <!-- IMAGE MAP: Emmanuel | profile photo file: emmanuel.png | Testimonial gallery -->
+
+                            <img src="./assets/emmanuel.png" alt="Emmanuel - AI / UGC Video Creator" id="testimony-member-img-1" class="hidden w-full h-full object-contain" loading="lazy">
+                            <div id="testimony-member-ph-1" class="p-6 text-center space-y-3">
+                                <i data-lucide="user-round" class="w-8 h-8 text-ctm-soft/70 mx-auto"></i>
+                                <span class="block text-sm text-ctm-soft font-semibold">Emmanuel</span>
+                                <span class="block text-xs text-ctm-cream/50">Add Emmanuel's photo as emmanuel.png</span>
+                            </div>
+                        </div>
+                        <div class="pt-3 text-center">
+                            <span class="text-sm font-semibold text-ctm-cream">Emmanuel</span>
+                            <span class="block mt-1 text-[10px] sm:text-[11px] leading-snug font-normal text-ctm-cream/55">AI / UGC Video Creator</span>
+                            <span class="flex items-center justify-center gap-1 text-xs text-ctm-soft mt-1">Read their testimony <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- Crafter image mapping: Jackson | file: jackson.png | identity: Graphic Designer -->
+                    <a href="#testimony-card-2" aria-label="Read Jackson's testimony" class="glass-card rounded-2xl p-3 border border-ctm-bright/15 overflow-hidden block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ctm-bright transition-transform hover:-translate-y-1">
+                        <div class="aspect-[4/5] rounded-xl bg-ctm-dark relative overflow-hidden flex items-center justify-center">
+                            <!-- IMAGE MAP: Jackson | profile photo file: jackson.png | Testimonial gallery -->
+
+                            <img src="./assets/jackson.png" alt="Jackson - Graphic Designer" id="testimony-member-img-2" class="hidden w-full h-full object-contain" loading="lazy">
+                            <div id="testimony-member-ph-2" class="p-6 text-center space-y-3">
+                                <i data-lucide="user-round" class="w-8 h-8 text-ctm-soft/70 mx-auto"></i>
+                                <span class="block text-sm text-ctm-soft font-semibold">Jackson</span>
+                                <span class="block text-xs text-ctm-cream/50">Add Jackson's photo as jackson.png</span>
+                            </div>
+                        </div>
+                        <div class="pt-3 text-center">
+                            <span class="text-sm font-semibold text-ctm-cream">Jackson</span>
+                            <span class="block mt-1 text-[10px] sm:text-[11px] leading-snug font-normal text-ctm-cream/55">Graphic Designer</span>
+                            <span class="flex items-center justify-center gap-1 text-xs text-ctm-soft mt-1">Read their testimony <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- Crafter image mapping: Nana | file: nana.png | identity: Graphic Designer / Content Strategist -->
+                    <a href="#testimony-card-3" aria-label="Read Nana's testimony" class="glass-card rounded-2xl p-3 border border-ctm-bright/15 overflow-hidden block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ctm-bright transition-transform hover:-translate-y-1">
+                        <div class="aspect-[4/5] rounded-xl bg-ctm-dark relative overflow-hidden flex items-center justify-center">
+                            <!-- IMAGE MAP: Nana | profile photo file: nana.png | Testimonial gallery -->
+
+                            <img src="./assets/nana.png" alt="Nana - Graphic Designer and Content Strategist" id="testimony-member-img-3" class="hidden w-full h-full object-contain" loading="lazy">
+                            <div id="testimony-member-ph-3" class="p-6 text-center space-y-3">
+                                <i data-lucide="user-round" class="w-8 h-8 text-ctm-soft/70 mx-auto"></i>
+                                <span class="block text-sm text-ctm-soft font-semibold">Nana</span>
+                                <span class="block text-xs text-ctm-cream/50">Add Nana's photo as nana.png</span>
+                            </div>
+                        </div>
+                        <div class="pt-3 text-center">
+                            <span class="text-sm font-semibold text-ctm-cream">Nana</span>
+                            <span class="block mt-1 text-[10px] sm:text-[11px] leading-snug font-normal text-ctm-cream/55">Graphic Designer / Content Strategist</span>
+                            <span class="flex items-center justify-center gap-1 text-xs text-ctm-soft mt-1">Read their testimony <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- Crafter image mapping: Yusuf | file: yusuf.png | identity: Landing Page / Web Designer & Graphic Designer -->
+                    <a href="#testimony-card-4" aria-label="Read Yusuf's testimony" class="glass-card rounded-2xl p-3 border border-ctm-bright/15 overflow-hidden block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ctm-bright transition-transform hover:-translate-y-1">
+                        <div class="aspect-[4/5] rounded-xl bg-ctm-dark relative overflow-hidden flex items-center justify-center">
+                            <!-- IMAGE MAP: Yusuf | profile photo file: yusuf.png | Testimonial gallery -->
+
+                            <img src="./assets/yusuf.png" alt="Yusuf - Landing Page / Web Designer and Graphic Designer" id="testimony-member-img-4" class="hidden w-full h-full object-contain" loading="lazy">
+                            <div id="testimony-member-ph-4" class="p-6 text-center space-y-3">
+                                <i data-lucide="user-round" class="w-8 h-8 text-ctm-soft/70 mx-auto"></i>
+                                <span class="block text-sm text-ctm-soft font-semibold">Yusuf</span>
+                                <span class="block text-xs text-ctm-cream/50">Add Yusuf's photo as yusuf.png</span>
+                            </div>
+                        </div>
+                        <div class="pt-3 text-center">
+                            <span class="text-sm font-semibold text-ctm-cream">Yusuf</span>
+                            <span class="block mt-1 text-[10px] sm:text-[11px] leading-snug font-normal text-ctm-cream/55">Landing Page / Web Designer &amp; Graphic Designer</span>
+                            <span class="flex items-center justify-center gap-1 text-xs text-ctm-soft mt-1">Read their testimony <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- Crafter image mapping: Teniola | file: teniola.png | identity: Video Ad Creator & Writer -->
+                    <a href="#testimony-card-5" aria-label="Read Teniola's testimony" class="glass-card rounded-2xl p-3 border border-ctm-bright/15 overflow-hidden block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ctm-bright transition-transform hover:-translate-y-1">
+                        <div class="aspect-[4/5] rounded-xl bg-ctm-dark relative overflow-hidden flex items-center justify-center">
+                            <!-- IMAGE MAP: Teniola | profile photo file: teniola.png | Testimonial gallery -->
+
+                            <img src="./assets/teniola.png" alt="Teniola - Video Ad Creator and Writer" id="testimony-member-img-5" class="hidden w-full h-full object-contain" loading="lazy">
+                            <div id="testimony-member-ph-5" class="p-6 text-center space-y-3">
+                                <i data-lucide="user-round" class="w-8 h-8 text-ctm-soft/70 mx-auto"></i>
+                                <span class="block text-sm text-ctm-soft font-semibold">Teniola</span>
+                                <span class="block text-xs text-ctm-cream/50">Add Teniola's photo as teniola.png</span>
+                            </div>
+                        </div>
+                        <div class="pt-3 text-center">
+                            <span class="text-sm font-semibold text-ctm-cream">Teniola</span>
+                            <span class="block mt-1 text-[10px] sm:text-[11px] leading-snug font-normal text-ctm-cream/55">Video Ad Creator &amp; Writer</span>
+                            <span class="flex items-center justify-center gap-1 text-xs text-ctm-soft mt-1">Read their testimony <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- Crafter image mapping: Stephen | file: stephen.png | identity: Graphic Designer -->
+                    <a href="#testimony-card-6" aria-label="Read Stephen's testimony" class="glass-card rounded-2xl p-3 border border-ctm-bright/15 overflow-hidden block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ctm-bright transition-transform hover:-translate-y-1">
+                        <div class="aspect-[4/5] rounded-xl bg-ctm-dark relative overflow-hidden flex items-center justify-center">
+                            <!-- IMAGE MAP: Stephen | profile photo file: stephen.png | Testimonial gallery -->
+
+                            <img src="./assets/stephen.png" alt="Stephen - Graphic Designer" id="testimony-member-img-6" class="hidden w-full h-full object-contain" loading="lazy">
+                            <div id="testimony-member-ph-6" class="p-6 text-center space-y-3">
+                                <i data-lucide="user-round" class="w-8 h-8 text-ctm-soft/70 mx-auto"></i>
+                                <span class="block text-sm text-ctm-soft font-semibold">Stephen</span>
+                                <span class="block text-xs text-ctm-cream/50">Add Stephen's photo as stephen.png</span>
+                            </div>
+                        </div>
+                        <div class="pt-3 text-center">
+                            <span class="text-sm font-semibold text-ctm-cream">Stephen</span>
+                            <span class="block mt-1 text-[10px] sm:text-[11px] leading-snug font-normal text-ctm-cream/55">Graphic Designer</span>
+                            <span class="flex items-center justify-center gap-1 text-xs text-ctm-soft mt-1">Read their testimony <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i></span>
+                        </div>
+                    </a>
+                </div>
+                <p class="text-center text-xs text-ctm-cream/45 mt-5">Photo mapping: emmanuel.png = Emmanuel (AI / UGC Video Creator); jackson.png = Jackson (Graphic Designer); nana.png = Nana (Graphic Designer / Content Strategist); yusuf.png = Yusuf (Landing Page / Web Designer & Graphic Designer); teniola.png = Teniola (Video Ad Creator & Writer); stephen.png = Stephen (Graphic Designer). Each portrait links to the testimony screenshot with the same number.</p>
+            </div>
+        </section>
+
+        <section id="testimony-screenshots" class="py-20 bg-ctm-deep/50 relative border-y border-ctm-soft/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mx-auto text-center space-y-4 mb-12">
+                    <div class="inline-flex items-center gap-2 text-ctm-bright font-bold uppercase tracking-widest text-xs">
+                        <i data-lucide="messages-square" class="w-4 h-4"></i>
+                        <span>Real Words from Crafters</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-ctm-cream">Member Testimonials</h2>
+                    <p class="text-ctm-cream/70 text-base">Select a Crafter above to jump to their matching testimony screenshot. Replace each placeholder with that member's original screenshot.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <figure id="testimony-card-1" class="glass-card rounded-2xl p-3 border border-ctm-bright/15 overflow-hidden scroll-mt-24">
+                        <div class="aspect-[4/5] rounded-xl bg-ctm-dark relative overflow-hidden flex items-center justify-center">
+                            <img src="./assets/testimony-1.jpg" alt="Emmanuel's CTM testimony screenshot" id="testimony-shot-1" class="hidden w-full h-full object-contain" loading="lazy">
+                            <div id="testimony-shot-ph-1" class="p-6 text-center space-y-3">
+                                <i data-lucide="image-plus" class="w-8 h-8 text-ctm-soft/70 mx-auto"></i>
+                                <span class="block text-sm text-ctm-soft font-semibold">Emmanuel's Testimony</span>
+                                <span class="block text-xs text-ctm-cream/50">Add Emmanuel's original screenshot as testimony-1.jpg</span>
+                            </div>
+                        </div>
+                    </figure>
+
+                    <figure id="testimony-card-2" class="glass-card rounded-2xl p-3 border border-ctm-bright/15 overflow-hidden scroll-mt-24">
+                        <div class="aspect-[4/5] rounded-xl bg-ctm-dark relative overflow-hidden flex items-center justify-center">
+                            <img src="./assets/testimony-2.jpg" alt="Jackson's CTM testimony screenshot" id="testimony-shot-2" class="hidden w-full h-full object-contain" loading="lazy">
+                            <div id="testimony-shot-ph-2" class="p-6 text-center space-y-3">
+                                <i data-lucide="image-plus" class="w-8 h-8 text-ctm-soft/70 mx-auto"></i>
+                                <span class="block text-sm text-ctm-soft font-semibold">Jackson's Testimony</span>
+                                <span class="block text-xs text-ctm-cream/50">Add Jackson's original screenshot as testimony-2.jpg</span>
+                            </div>
+                        </div>
+                    </figure>
+
+                    <figure id="testimony-card-3" class="glass-card rounded-2xl p-3 border border-ctm-bright/15 overflow-hidden scroll-mt-24">
+                        <div class="aspect-[4/5] rounded-xl bg-ctm-dark relative overflow-hidden flex items-center justify-center">
+                            <img src="./assets/testimony-3.jpg" alt="Nana's CTM testimony screenshot" id="testimony-shot-3" class="hidden w-full h-full object-contain" loading="lazy">
+                            <div id="testimony-shot-ph-3" class="p-6 text-center space-y-3">
+                                <i data-lucide="image-plus" class="w-8 h-8 text-ctm-soft/70 mx-auto"></i>
+                                <span class="block text-sm text-ctm-soft font-semibold">Nana's Testimony</span>
+                                <span class="block text-xs text-ctm-cream/50">Add Nana's original screenshot as testimony-3.jpg</span>
+                            </div>
+                        </div>
+                    </figure>
+
+                    <figure id="testimony-card-4" class="glass-card rounded-2xl p-3 border border-ctm-bright/15 overflow-hidden scroll-mt-24">
+                        <div class="aspect-[4/5] rounded-xl bg-ctm-dark relative overflow-hidden flex items-center justify-center">
+                            <img src="./assets/testimony-4.jpg" alt="Yusuf's CTM testimony screenshot" id="testimony-shot-4" class="hidden w-full h-full object-contain" loading="lazy">
+                            <div id="testimony-shot-ph-4" class="p-6 text-center space-y-3">
+                                <i data-lucide="image-plus" class="w-8 h-8 text-ctm-soft/70 mx-auto"></i>
+                                <span class="block text-sm text-ctm-soft font-semibold">Yusuf's Testimony</span>
+                                <span class="block text-xs text-ctm-cream/50">Add Yusuf's original screenshot as testimony-4.jpg</span>
+                            </div>
+                        </div>
+                    </figure>
+
+                    <figure id="testimony-card-5" class="glass-card rounded-2xl p-3 border border-ctm-bright/15 overflow-hidden scroll-mt-24">
+                        <div class="aspect-[4/5] rounded-xl bg-ctm-dark relative overflow-hidden flex items-center justify-center">
+                            <img src="./assets/testimony-5.jpg" alt="Teniola's CTM testimony screenshot" id="testimony-shot-5" class="hidden w-full h-full object-contain" loading="lazy">
+                            <div id="testimony-shot-ph-5" class="p-6 text-center space-y-3">
+                                <i data-lucide="image-plus" class="w-8 h-8 text-ctm-soft/70 mx-auto"></i>
+                                <span class="block text-sm text-ctm-soft font-semibold">Teniola's Testimony</span>
+                                <span class="block text-xs text-ctm-cream/50">Add Teniola's original screenshot as testimony-5.jpg</span>
+                            </div>
+                        </div>
+                    </figure>
+
+                    <figure id="testimony-card-6" class="glass-card rounded-2xl p-3 border border-ctm-bright/15 overflow-hidden scroll-mt-24">
+                        <div class="aspect-[4/5] rounded-xl bg-ctm-dark relative overflow-hidden flex items-center justify-center">
+                            <img src="./assets/testimony-6.jpg" alt="Stephen's CTM testimony screenshot" id="testimony-shot-6" class="hidden w-full h-full object-contain" loading="lazy">
+                            <div id="testimony-shot-ph-6" class="p-6 text-center space-y-3">
+                                <i data-lucide="image-plus" class="w-8 h-8 text-ctm-soft/70 mx-auto"></i>
+                                <span class="block text-sm text-ctm-soft font-semibold">Stephen's Testimony</span>
+                                <span class="block text-xs text-ctm-cream/50">Add Stephen's original screenshot as testimony-6.jpg</span>
+                            </div>
+                        </div>
+                    </figure>
+                </div>
+                <p class="text-center text-xs text-ctm-cream/45 mt-5">Upload six original testimony screenshots named testimony-1.jpg through testimony-6.jpg in this order: Emmanuel, Jackson, Nana, Yusuf, Teniola, Stephen. Keep each screenshot matched to the portrait with the same number.</p>
+            </div>
+        </section>
+
+        
+
+        <section class="py-20 relative overflow-hidden">
+            
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-ctm-burnt/20 to-ctm-dark pointer-events-none"></div>
+
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="glass-card p-10 sm:p-16 rounded-3xl border border-ctm-bright/40 text-center space-y-8 shadow-deep-glow">
+                    
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-ctm-cream leading-tight">
+                        Your next chapter can start with a conversation.
+                    </h2>
+
+                    <p class="text-lg text-ctm-cream/80 max-w-2xl mx-auto">
+                        Come as you are. Join 200+ Crafters in a warm, welcoming, and growth-focused environment on WhatsApp.
+                    </p>
+
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <a href="https://chat.whatsapp.com/DvCv6tGCBkMDHV9EHrrBmJ" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto gradient-bg-cta text-ctm-dark font-extrabold text-base sm:text-lg px-8 py-4 rounded-2xl shadow-warm-glow hover:scale-105 active:scale-95 transition-all duration-200 flex items-center justify-center gap-3 group">
+                            <i data-lucide="message-circle" class="w-6 h-6 fill-current group-hover:rotate-12 transition-transform"></i>
+                            <span>JOIN THE CTM COMMUNITY &mdash; IT&rsquo;S CURRENTLY FREE</span>
+                        </a>
+                    </div>
+
+                    <p class="text-xs text-ctm-cream/50">
+                        Official WhatsApp Community Link &bull; Instant Access
+                    </p>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-ctm-dark border-t border-ctm-soft/10 py-12 text-ctm-cream/70 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+
+                <div class="md:col-span-6 space-y-3">
+                    <div class="flex items-center gap-3">
+                        <!-- FOOTER LOGO: Place your logo file beside this HTML file and name it ctm-logo.png, or update the src path below. -->
+                        <div id="footer-logo-container" class="w-8 h-8 rounded-lg bg-transparent flex items-center justify-center overflow-hidden">
+                            <img src="./assets/ctm-logo.png" alt="Crafting the Mind CTM logo" id="footer-logo-img" class="hidden w-full h-full object-contain">
+                            <span id="footer-logo-fallback" class="text-ctm-cream/70 text-[10px] font-bold">CTM</span>
+                        </div>
+                        <span class="font-extrabold text-base text-ctm-cream">Crafting the Mind</span>
+                    </div>
+                    <p class="text-xs text-ctm-cream/60 max-w-sm leading-relaxed">
+                        Crafting the Mind (CTM) is a WhatsApp-hosted community dedicated to mindset, honest conversations, personal growth, clarity, opportunities, and authentic human connections.
+                    </p>
+                </div>
+
+                <div class="md:col-span-6 grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs">
+                    <div class="space-y-2">
+                        <span class="font-bold text-ctm-soft uppercase tracking-wider block">Explore</span>
+                        <a href="#about" class="block hover:text-ctm-bright transition-colors">About CTM</a>
+                        <a href="#activities" class="block hover:text-ctm-bright transition-colors">Community Life</a>
+                        <a href="#opportunities" class="block hover:text-ctm-bright transition-colors">Opportunities</a>
+                    </div>
+                    <div class="space-y-2">
+                        <span class="font-bold text-ctm-soft uppercase tracking-wider block">Resources</span>
+                        <a href="#events" class="block hover:text-ctm-bright transition-colors">Learning Sessions</a>
+                        <a href="#shelf" class="block hover:text-ctm-bright transition-colors">The Crafter's Shelf</a>
+                        <a href="#founder" class="block hover:text-ctm-bright transition-colors">Founder's Story</a>
+                    </div>
+                    <div class="space-y-2">
+                        <span class="font-bold text-ctm-soft uppercase tracking-wider block">Community</span>
+                        <a href="https://chat.whatsapp.com/DvCv6tGCBkMDHV9EHrrBmJ" target="_blank" rel="noopener noreferrer" class="block text-ctm-bright font-semibold hover:underline">
+                            Join WhatsApp Group
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-ctm-cream/5 flex flex-col sm:flex-row items-center justify-between text-xs text-ctm-cream/40 gap-4">
+                <p>&copy; Crafting the Mind (CTM) Community. All rights reserved.</p>
+                <p class="text-center sm:text-right">Mindset &bull; Connection &bull; Growth</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BACK TO TOP: CTM palette styling, appears after scrolling down -->
+    <button
+        type="button"
+        id="back-to-top"
+        aria-label="Back to top"
+        title="Back to top"
+        aria-hidden="true"
+        class="fixed bottom-6 left-5 right-auto sm:bottom-8 sm:left-8 sm:right-auto z-50 hidden h-12 w-12 sm:h-14 sm:w-14 rounded-2xl border border-ctm-soft/35 bg-ctm-deep text-ctm-soft shadow-warm-glow items-center justify-center transition-all duration-300 hover:bg-ctm-burnt hover:text-ctm-cream hover:-translate-y-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-ctm-bright focus-visible:ring-offset-2 focus-visible:ring-offset-ctm-dark"
+    >
+        <i data-lucide="chevron-up" class="w-6 h-6" aria-hidden="true"></i>
+    </button>
+
+    <script>
+        if (window.lucide && typeof window.lucide.createIcons === 'function') {
+            window.lucide.createIcons();
+        }
+
+        const backToTopButton = document.getElementById('back-to-top');
+
+        if (backToTopButton) {
+            const updateBackToTopVisibility = () => {
+                const showButton = window.scrollY > 400;
+                backToTopButton.classList.toggle('hidden', !showButton);
+                backToTopButton.classList.toggle('flex', showButton);
+                backToTopButton.setAttribute('aria-hidden', String(!showButton));
+                backToTopButton.tabIndex = showButton ? 0 : -1;
+            };
+
+            window.addEventListener('scroll', updateBackToTopVisibility, { passive: true });
+            updateBackToTopVisibility();
+
+            backToTopButton.addEventListener('click', () => {
+                const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                window.scrollTo({
+                    top: 0,
+                    behavior: prefersReducedMotion ? 'auto' : 'smooth'
+                });
+            });
+        }
+
+        const header = document.getElementById('main-header');
+        if (header) {
+            window.addEventListener('scroll', () => {
+                header.classList.toggle('glass-card', window.scrollY > 20);
+                header.classList.toggle('shadow-lg', window.scrollY > 20);
+            }, { passive: true });
+        }
+
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIconOpen = document.getElementById('menu-icon-open');
+        const menuIconClose = document.getElementById('menu-icon-close');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        if (mobileMenuBtn && mobileMenu && menuIconOpen && menuIconClose) {
+            const setMobileMenuOpen = (isOpen) => {
+                mobileMenu.classList.toggle('hidden', !isOpen);
+                menuIconOpen.classList.toggle('hidden', isOpen);
+                menuIconClose.classList.toggle('hidden', !isOpen);
+                mobileMenuBtn.setAttribute('aria-expanded', String(isOpen));
+            };
+
+            mobileMenuBtn.addEventListener('click', () => {
+                setMobileMenuOpen(mobileMenu.classList.contains('hidden'));
+            });
+
+            mobileNavLinks.forEach((link) => {
+                link.addEventListener('click', () => setMobileMenuOpen(false));
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape') setMobileMenuOpen(false);
+            });
+        }
+
+        const ctmImagePairs = [
+            ['nav-logo-img', 'nav-logo-fallback'],
+            ['footer-logo-img', 'footer-logo-fallback'],
+            ['about-image', 'about-placeholder'],
+            ['gallery-img-1', 'gallery-ph-1'],
+            ['gallery-img-2', 'gallery-ph-2'],
+            ['gallery-img-3', 'gallery-ph-3'],
+            ['gallery-img-4', 'gallery-ph-4'],
+            ['gallery-img-5', 'gallery-ph-5'],
+            ['gallery-img-6', 'gallery-ph-6'],
+            ['event-flyer-1', 'event-ph-1'],
+            ['event-flyer-2', 'event-ph-2'],
+            ['isee-you-box-image', 'isee-you-box-placeholder'],
+            ['testimony-member-img-1', 'testimony-member-ph-1'],
+            ['testimony-member-img-2', 'testimony-member-ph-2'],
+            ['testimony-member-img-3', 'testimony-member-ph-3'],
+            ['testimony-member-img-4', 'testimony-member-ph-4'],
+            ['testimony-member-img-5', 'testimony-member-ph-5'],
+            ['testimony-member-img-6', 'testimony-member-ph-6'],
+            ['founder-img', 'founder-ph'],
+            ['testimony-shot-1', 'testimony-shot-ph-1'],
+            ['testimony-shot-2', 'testimony-shot-ph-2'],
+            ['testimony-shot-3', 'testimony-shot-ph-3'],
+            ['testimony-shot-4', 'testimony-shot-ph-4'],
+            ['testimony-shot-5', 'testimony-shot-ph-5'],
+            ['testimony-shot-6', 'testimony-shot-ph-6'],
+            ['why-joined-img-1', 'why-joined-ph-1'],
+            ['why-joined-img-2', 'why-joined-ph-2'],
+            ['why-joined-img-3', 'why-joined-ph-3'],
+            ['why-joined-img-4', 'why-joined-ph-4'],
+            ['why-joined-img-5', 'why-joined-ph-5'],
+            ['why-joined-img-6', 'why-joined-ph-6'],
+            ['member-img-1', 'member-ph-1'],
+            ['member-img-2', 'member-ph-2'],
+            ['member-img-3', 'member-ph-3'],
+            ['member-img-4', 'member-ph-4'],
+            ['member-img-5', 'member-ph-5'],
+            ['member-img-6', 'member-ph-6']
+        ];
+
+        ctmImagePairs.forEach(([imageId, placeholderId]) => {
+            const imgEl = document.getElementById(imageId);
+            const placeholderEl = document.getElementById(placeholderId);
+            if (!imgEl) return;
+
+            const showImage = () => {
+                imgEl.classList.remove('hidden');
+                if (placeholderEl) placeholderEl.classList.add('hidden');
+            };
+
+            const showPlaceholder = () => {
+                imgEl.classList.add('hidden');
+                if (placeholderEl) placeholderEl.classList.remove('hidden');
+            };
+
+            imgEl.addEventListener('load', showImage);
+            imgEl.addEventListener('error', showPlaceholder);
+
+            if (imgEl.complete) {
+                if (imgEl.naturalWidth > 0) showImage();
+                else showPlaceholder();
+            }
+        });
+    </script>
+</body>
+</html>
